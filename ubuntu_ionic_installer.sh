@@ -28,11 +28,11 @@ ANDROID_SDK_X64="http://dl.google.com/android/android-sdk_r24.4.1-linux.tgz"
 ANDROID_SDK_X86="http://dl.google.com/android/android-sdk_r24.4.1-linux.tgz"
 
 # Latest NodeJS for x64 and x86 as of 12-19-2015
-NODE_X64="https://nodejs.org/download/release/v0.12.9/node-v0.12.9-linux-x64.tar.gz"
-NODE_X86="https://nodejs.org/download/release/v0.12.9/node-v0.12.9-linux-x86.tar.gz"
+NODE_X64="https://nodejs.org/download/release/latest-v7.x/node-v7.1.0-linux-x64.tar.gz"
+NODE_X86="https://nodejs.org/download/release/latest-v7.x/node-v7.1.0-linux-x86.tar.gz"
 
 # Latest Gradle as of 12-19-2015
-GRADLE_ALL="https://services.gradle.org/distributions/gradle-2.9-all.zip"
+GRADLE_ALL="https://services.gradle.org/distributions/gradle-3.1-all.zip"
 
 if [ "$LINUX_ARCH" == "x86_64" ]; then
     # Add i386 architecture
@@ -53,11 +53,11 @@ if [ "$LINUX_ARCH" == "x86_64" ]; then
     tar zxf "nodejs.tgz" -C "$INSTALL_PATH"
     tar zxf "android-sdk.tgz" -C "$INSTALL_PATH"
     unzip "gradle.zip"
-    mv "gradle-2.9" "$INSTALL_PATH"
+    mv "gradle-3.1" "$INSTALL_PATH"
 
     cd "$INSTALL_PATH" && mv "android-sdk-linux" "android-sdk"
-    cd "$INSTALL_PATH" && mv "node-v0.12.9-linux-x64" "node"
-    cd "$INSTALL_PATH" && mv "gradle-2.9" "gradle"
+    cd "$INSTALL_PATH" && mv "node-v7.1.0-linux-x64" "node"
+    cd "$INSTALL_PATH" && mv "gradle-3.1" "gradle"
 
     # Android SDK requires some x86 architecture libraries even on x64 system
     apt-get install -qq -y libc6:i386 libgcc1:i386 libstdc++6:i386 libz1:i386
@@ -71,11 +71,11 @@ else
     tar zxf "nodejs.tgz" -C "$INSTALL_PATH"
     tar zxf "android-sdk.tgz" -C "$INSTALL_PATH"
     unzip "gradle.zip"
-    mv "gradle-2.9" "$INSTALL_PATH"
+    mv "gradle-3.1" "$INSTALL_PATH"
 
     cd "$INSTALL_PATH" && mv "android-sdk-linux" "android-sdk"
-    cd "$INSTALL_PATH" && mv "node-v0.12.9-linux-x86" "node"
-    cd "$INSTALL_PATH" && mv "gradle-2.9" "gradle"
+    cd "$INSTALL_PATH" && mv "node-v7.1.0-linux-x86" "node"
+    cd "$INSTALL_PATH" && mv "gradle-3.1" "gradle"
 
 fi
 
